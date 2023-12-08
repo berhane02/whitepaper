@@ -7,9 +7,12 @@
   <form method="POST">
     {% csrf_token %} {% if form.errors %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      Your Form Has errors {% for field in form %} {% if field.errors %} {{
-      field.errors}} {% endif %} {% endfor %}
-
+      Your Form Has errors 
+      {% for field in form %} 
+        {% if field.errors %} 
+          {{ field.errors }} 
+        {% endif %} 
+      {% endfor %}
       <button
         type="button"
         class="btn-close"
